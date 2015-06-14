@@ -18,6 +18,7 @@ if (fileToResponse == undefined)
 
 var server = http.createServer(function(request, response)
 {
+	response.writeHead(200, { 'content-type': 'text/html' });
 	var readStream = fs.createReadStream(fileToResponse);
 
 	readStream.on('open', function () {
